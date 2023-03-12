@@ -1,0 +1,96 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GrpcServices", "GrpcServices", "{C46F873D-DADC-46D5-B2F1-484EFFDA1467}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RestServices", "RestServices", "{A0B5F463-9CED-41F1-8921-1C54460532BA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserGrpc", "GrpcServices\UserGrpc\UserGrpc.csproj", "{64FA8B4C-31DD-46E2-A97B-422BEEE24B07}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WalletGrpc", "GrpcServices\WalletGrpc\WalletGrpc.csproj", "{32CA1281-5904-4B2E-A0D6-4FC84F68CC9A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetGrpc", "GrpcServices\AssetGrpc\AssetGrpc.csproj", "{832F7463-68B4-4CF0-B182-C368F7E8E280}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WalletApi", "RestServices\WalletApi\WalletApi.csproj", "{FB316911-A98C-4011-9F39-CBD929BB7242}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetApi", "RestServices\AssetApi\AssetApi.csproj", "{AF22C25E-FBD2-433E-B327-C551C41F087B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserApi", "RestServices\UserApi\UserApi.csproj", "{73092A7D-F285-445A-A017-A78C44487677}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateways", "Gateways", "{FE055599-A290-4BC5-B96C-35EF6E03DBDF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcGateway", "Gateways\GrpcGateway\GrpcGateway.csproj", "{BB181585-11A2-4F7D-9A96-BEB8376C9C1B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestGateway", "Gateways\RestGateway\RestGateway.csproj", "{3287A4B7-B1AC-4C76-9A3A-F146F86C31F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{12F34E58-26B8-4ABD-B873-04C0C961F25D}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		GrpcAsset.Dockerfile = GrpcAsset.Dockerfile
+		GrpcGateway.Dockerfile = GrpcGateway.Dockerfile
+		GrpcUser.Dockerfile = GrpcUser.Dockerfile
+		GrpcWallet.Dockerfile = GrpcWallet.Dockerfile
+		RestAsset.Dockerfile = RestAsset.Dockerfile
+		RestGateway.Dockerfile = RestGateway.Dockerfile
+		RestUser.Dockerfile = RestUser.Dockerfile
+		RestWallet.Dockerfile = RestWallet.Dockerfile
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64FA8B4C-31DD-46E2-A97B-422BEEE24B07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64FA8B4C-31DD-46E2-A97B-422BEEE24B07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64FA8B4C-31DD-46E2-A97B-422BEEE24B07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64FA8B4C-31DD-46E2-A97B-422BEEE24B07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32CA1281-5904-4B2E-A0D6-4FC84F68CC9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32CA1281-5904-4B2E-A0D6-4FC84F68CC9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32CA1281-5904-4B2E-A0D6-4FC84F68CC9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32CA1281-5904-4B2E-A0D6-4FC84F68CC9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{832F7463-68B4-4CF0-B182-C368F7E8E280}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{832F7463-68B4-4CF0-B182-C368F7E8E280}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{832F7463-68B4-4CF0-B182-C368F7E8E280}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{832F7463-68B4-4CF0-B182-C368F7E8E280}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB316911-A98C-4011-9F39-CBD929BB7242}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB316911-A98C-4011-9F39-CBD929BB7242}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB316911-A98C-4011-9F39-CBD929BB7242}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB316911-A98C-4011-9F39-CBD929BB7242}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF22C25E-FBD2-433E-B327-C551C41F087B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF22C25E-FBD2-433E-B327-C551C41F087B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF22C25E-FBD2-433E-B327-C551C41F087B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF22C25E-FBD2-433E-B327-C551C41F087B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73092A7D-F285-445A-A017-A78C44487677}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73092A7D-F285-445A-A017-A78C44487677}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73092A7D-F285-445A-A017-A78C44487677}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73092A7D-F285-445A-A017-A78C44487677}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB181585-11A2-4F7D-9A96-BEB8376C9C1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB181585-11A2-4F7D-9A96-BEB8376C9C1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB181585-11A2-4F7D-9A96-BEB8376C9C1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB181585-11A2-4F7D-9A96-BEB8376C9C1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3287A4B7-B1AC-4C76-9A3A-F146F86C31F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3287A4B7-B1AC-4C76-9A3A-F146F86C31F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3287A4B7-B1AC-4C76-9A3A-F146F86C31F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3287A4B7-B1AC-4C76-9A3A-F146F86C31F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{64FA8B4C-31DD-46E2-A97B-422BEEE24B07} = {C46F873D-DADC-46D5-B2F1-484EFFDA1467}
+		{32CA1281-5904-4B2E-A0D6-4FC84F68CC9A} = {C46F873D-DADC-46D5-B2F1-484EFFDA1467}
+		{832F7463-68B4-4CF0-B182-C368F7E8E280} = {C46F873D-DADC-46D5-B2F1-484EFFDA1467}
+		{FB316911-A98C-4011-9F39-CBD929BB7242} = {A0B5F463-9CED-41F1-8921-1C54460532BA}
+		{AF22C25E-FBD2-433E-B327-C551C41F087B} = {A0B5F463-9CED-41F1-8921-1C54460532BA}
+		{73092A7D-F285-445A-A017-A78C44487677} = {A0B5F463-9CED-41F1-8921-1C54460532BA}
+		{BB181585-11A2-4F7D-9A96-BEB8376C9C1B} = {FE055599-A290-4BC5-B96C-35EF6E03DBDF}
+		{3287A4B7-B1AC-4C76-9A3A-F146F86C31F3} = {FE055599-A290-4BC5-B96C-35EF6E03DBDF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {21E0D4BF-E863-4D28-B733-F3A48371AE25}
+	EndGlobalSection
+EndGlobal

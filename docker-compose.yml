@@ -1,0 +1,73 @@
+version: '3.4'
+
+services:
+  restgateway:
+    image: rest-gateway
+    links:
+        - assetapi
+        - userapi
+        - walletapi
+    build:
+      context: .
+      dockerfile: /RestGateway.Dockerfile
+    ports:
+       - "19071:80"
+
+  assetapi:
+    image: asset-api
+    build:
+      context: .
+      dockerfile: /RestAsset.Dockerfile
+    ports:
+       - "19078:80"
+
+  userapi:
+     image: user-api
+     build:
+        context: .
+        dockerfile: /RestUser.Dockerfile
+     ports:
+       - "19079:80"
+
+  walletapi:
+     image: wallet-api
+     build:
+       context: .
+       dockerfile: /RestWallet.Dockerfile
+     ports:
+       - "19070:80"
+
+  grpcgateway:
+    image: grpc-gateway
+    links:
+        - assetgrpc
+        - usergrpc
+        - walletgrpc
+    build:
+      context: .
+      dockerfile: /GrpcGateway.Dockerfile
+    ports:
+       - "19072:80"
+  assetgrpc:
+    image: asset-grpc
+    build:
+      context: .
+      dockerfile: /GrpcAsset.Dockerfile
+    ports:
+       - "19075:80"
+
+  usergrpc:
+     image: user-grpc
+     build:
+        context: .
+        dockerfile: /GrpcUser.Dockerfile
+     ports:
+        - "19076:80" 
+
+  walletgrpc:
+     image: wallet-grpc
+     build:
+       context: .
+       dockerfile: /GrpcWallet.Dockerfile
+     ports:
+        - "19077:80"

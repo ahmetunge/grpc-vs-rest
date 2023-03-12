@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcGateway";
+
+package asset;
+
+service Asset {
+  rpc QueryAssets (QueryAssetRequest) returns (QueryAssetResponse);
+}
+
+message QueryAssetRequest {
+	optional AssetStatus assetStatus=1;
+}
+
+message QueryAssetResponse {
+	repeated  QueryAssetResponseItem items=1;
+}
+
+message QueryAssetResponseItem {
+  int32 id = 1;
+  string name =2;
+  string symbol =3;
+  int32 exchangeId=4;
+  double minPrice=5;
+  double maxPrice =6;
+  bool isBuyable=7;
+  bool isSellable=8;
+  AssetType type =9;
+  AssetStatus status =10;
+  SuitabilityRiskLevel suitabilityRiskLevel=11;
+}
+
+enum AssetType {
+ ASSET_TYPE_UNKNOWN = 0;
+ ASSET_TYPE_EQUITY = 1;
+ ASSET_TYPE_RIGHTS = 2;
+}
+
+enum AssetStatus {
+ ASSET_STATUS_UNKNOWN = 0;
+ ASSET_STATUS_CLOSED = 1;
+ ASSET_STATUS_OPEN = 2;
+ ASSET_STATUS_SUSPENDED = 3;
+}
+
+enum SuitabilityRiskLevel {
+ SUITABILITY_RISK_LEVEL_UNKNOWN = 0;
+ SUITABILITY_RISK_LEVEL_VERYLOW = 1;
+ SUITABILITY_RISK_LEVEL_LOW = 2;
+ SUITABILITY_RISK_LEVEL_MEDIUM = 3;
+ SUITABILITY_RISK_LEVEL_HIGH = 4;
+ SUITABILITY_RISK_LEVEL_VERY_HIGH = 5;
+}

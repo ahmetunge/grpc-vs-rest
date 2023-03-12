@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserGrpc";
+
+package userBrokerageAccount;
+
+// The greeting service definition.
+service UserBrokerageAccount {
+  // Sends a greeting
+  rpc QueryUserBrokerageAccounts (QueryUserBrokerageAccountRequest) returns (QueryUserBrokerageAccountResponse);
+}
+
+// The request message containing the user's name.
+message QueryUserBrokerageAccountRequest {
+ optional string referenceId=1;
+ optional int64 userAccountId=2;
+ optional int64 userBrokerageId=3;
+}
+
+// The response message containing the greetings.
+message QueryUserBrokerageAccountResponse {
+  repeated  QueryUserBrokerageAccountResponseItem items=1;
+}
+
+message QueryUserBrokerageAccountResponseItem{
+	int64 id=1;
+	int64 userAccountId=2;
+	string	referenceId=3;
+	int32 userBrokerageId=4;
+}

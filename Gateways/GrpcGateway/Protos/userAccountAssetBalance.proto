@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcGateway";
+
+package userAccountAssetBalance;
+
+service UserAccountAssetBalance {
+  rpc QueryUserAccountAssetBalances (QueryUserAccountAssetBalanceRequest) returns (QueryUserAccountAssetBalanceResponse);
+}
+
+
+message QueryUserAccountAssetBalanceRequest {
+ optional string brokerageAccountId=1;
+ optional string symbol=2;
+}
+
+
+message QueryUserAccountAssetBalanceResponse {
+  repeated  QueryUserAccountAssetBalanceResponseItem items=1;
+}
+
+message QueryUserAccountAssetBalanceResponseItem{
+	string symbol=1;
+	double totalQuantity=2;
+    double price =3;
+    double totalAmount=4;
+    double availableQuantity =5;
+    double availableAmount=6;
+}

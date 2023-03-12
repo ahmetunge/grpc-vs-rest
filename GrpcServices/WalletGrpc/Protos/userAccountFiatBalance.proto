@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option csharp_namespace = "WalletGrpc";
+
+package userAccountFiatBalance;
+
+service UserAccountFiatBalance {
+  rpc GetUserAccountFiatBalance (GetUserAccountFiatBalanceRequest) returns (GetUserAccountFiatBalanceResponse);
+}
+
+
+message GetUserAccountFiatBalanceRequest {
+ optional string brokerageAccountId=1;
+}
+
+
+message GetUserAccountFiatBalanceResponse {
+	double blockageAmount=1;
+	double withdrawableAmount=2;
+	double cashInflowAmount=3;
+	double cashOutflowAmount=4;
+    repeated  YieldBalance YieldBalances=5;
+}
+
+message YieldBalance{
+	int32 id=1;
+	double amount=2;
+}
