@@ -7,7 +7,6 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["RestServices/UserApi/UserApi.csproj", "RestServices/UserApi/"]
-COPY ["Shared/Shared.csproj", "Shared/"]
 RUN dotnet restore "RestServices/UserApi/UserApi.csproj"
 COPY . .
 WORKDIR "/src/RestServices/UserApi"
