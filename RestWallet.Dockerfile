@@ -7,8 +7,6 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 
-COPY ["Shared/Shared.csproj", "Shared/"]
-
 COPY ["RestServices/WalletApi/WalletApi.csproj", "RestServices/WalletApi/"]
 RUN dotnet restore "RestServices/WalletApi/WalletApi.csproj"
 
