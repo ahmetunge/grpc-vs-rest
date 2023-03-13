@@ -7,7 +7,6 @@ EXPOSE 80
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["GrpcServices/WalletGrpc/WalletGrpc.csproj", "GrpcServices/WalletGrpc/"]
-COPY ["Shared/Shared.csproj", "Shared/"]
 RUN dotnet restore "GrpcServices/WalletGrpc/WalletGrpc.csproj"
 COPY . .
 WORKDIR "/src/GrpcServices/WalletGrpc"
